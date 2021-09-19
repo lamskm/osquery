@@ -9,25 +9,17 @@ In the forked repo of osquery above, an extension table named ping has been adde
 
 Three CMakeLists.txt files have been modified (added a line for the ping table code):
 
-diff --git a/osquery/tables/networking/CMakeLists.txt b/osquery/tables/networking/CMakeLists.txt
-     listening_ports.cpp
-+    ping.cpp
-diff --git a/specs/CMakeLists.txt b/specs/CMakeLists.txt
-     os_version.table
-+    ping.table
-     platform_info.table
-diff --git a/tests/integration/tables/CMakeLists.txt b/tests/integration/tables/CMakeLists.txt
-     osquery_schedule.cpp
-+    ping.cpp
-     platform_info.cpp
+https://github.com/lamskm/osquery/blob/master/specs/CMakeLists.txt
+https://github.com/lamskm/osquery/blob/master/osquery/tables/networking/CMakeLists.txt
+https://github.com/lamskm/osquery/blob/master/tests/integration/tables/CMakeLists.txt
 
 and three files have been added:
 
-/osquery/tables/networking/ping.cpp
-/specs/ping.table
-/osquery/tests/integration/tables/ping.cpp
+https://github.com/lamskm/osquery/blob/master/specs/ping.table
+https://github.com/lamskm/osquery/blob/master/osquery/tables/networking/ping.cpp
+https://github.com/lamskm/osquery/blob/master/tests/integration/tables/ping.cpp
 
-These 3 changes and 3 files can be downloaded and integrated into an existing osquery repo to build with the same commands.
+These 3 changes and 3 files can be downloaded and integrated into an existing osquery repo to build.
 And the same invocation of osqueryi will allow the use of the ping table, such as:
 
 osquery> select * from ping where url = "yahoo.com";
