@@ -31,12 +31,12 @@ These 3 changes and 3 files can be downloaded and integrated into an existing os
 
 2. The design choices mostly follow what existed and worked well.
 
-The code style and amount of logic follows that of the existing curl table.
-(/osquery/tables/networking/ping.cpp)
+The code style and amount of logic follow that of the existing osquery curl table.
+(/osquery/tables/networking/curl.cpp)
 Input checking mainly relies on the existing infrastructure, such that
 invalid input (URL value) is ignored.
 Since a part of the server code is in C/C++, there is a potential of buffer overflow.
-But the osquery infrastructure seems able to handle over 1M of URL length without crashing.
+But the osquery infrastructure seems to be able to handle over 1M of URL length without crashing.
 
 For the ping/ICMP logic, a number of existing ping programs have been referenced.
 But the logic of Mike Muuss's program at https://gist.github.com/bugparty/ccba5744ba8f1cece5e0
