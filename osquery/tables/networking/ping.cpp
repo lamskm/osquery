@@ -209,19 +209,19 @@ uint16_t checksum(uint16_t *addr, unsigned len)
 QueryData genPing(QueryContext& context) {
   QueryData results;
 
-  auto requests = context.constraints["url"].getAll(EQUALS);
+  auto requests = context.constraints["host"].getAll(EQUALS);
 
-  // Using the like clause for urls wouldn't make sense
-  if (context.constraints["url"].getAll(LIKE).size()) {
-    LOG(WARNING) << "Using LIKE clause for url is not supported";
+  // Using the like clause for host wouldn't make sense
+  if (context.constraints["host"].getAll(LIKE).size()) {
+    LOG(WARNING) << "Using LIKE clause for host is not supported";
   }
 
   for (const auto& request : requests) {
     Row r;
-    r["url"] = request;
+    r["host"] = request;
     uint64_t latency = 0;
     for (int i=0; i<10; i++) {
-      latency = ping(r["url"]);
+      latency = ping(r["host"]);
       if (latency > 0)
         break;
     }
