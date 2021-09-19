@@ -56,6 +56,7 @@ function(generateTestsIntegrationTablesTestsTest)
     osquery_packs.cpp
     osquery_registry.cpp
     osquery_schedule.cpp
+    ping.cpp
     platform_info.cpp
     process_memory_map.cpp
     process_open_sockets.cpp
