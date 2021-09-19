@@ -27,8 +27,8 @@ osquery> select * from ping where url = "yahoo.com" or url = "8.8.8.8";
 
 [2]. The design choices mostly follow what existed and worked well.  
 
-The code style and amount of logic follow that of the existing osquery curl table.
-(/osquery/tables/networking/curl.cpp)
+The code style and amount of logic follow that of the existing osquery curl table.  
+(/osquery/tables/networking/curl.cpp)   
 Input checking mainly relies on the existing infrastructure, such that
 invalid input (URL value) is ignored.
 Since a part of the server code is in C/C++, there is a potential of buffer overflow.
