@@ -168,8 +168,8 @@ uint64_t ping(std::string target)
   
       gettimeofday(&end, NULL);
 
-      // Converting to milliseconds from time difference
-      latency = 1000 * (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec) / 1000;
+      // Converting to useconds from time difference
+      latency = 1000000 * (end.tv_sec - start.tv_sec) + (end.tv_usec - start.tv_usec);
       
       retry = 1;
       return latency;
@@ -226,7 +226,7 @@ QueryData genPing(QueryContext& context) {
         break;
     }
 
-    r["latency"] = INTEGER(latency);
+    r["latency"] = INTEGER(latency/1000);
     results.push_back(r);
     sleep(1);
   }
