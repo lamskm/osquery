@@ -44,12 +44,9 @@ uint16_t checksum(uint16_t *addr, unsigned len);
 /* 
   The ping() function is mostly derived from versions from Mike Muuss and 
   https://gist.github.com/KelviNosse:
-
   Using socket sendto() to send the ping packet to the destination,
   and using select() to wait for the response.
-
   I followed their approach because this is what Linux ping does.
-
   One subtle detail is the use of static sckt (socket variable) to
   reuse the same socket when ping() is called repeatedly.
 */
@@ -208,6 +205,8 @@ uint16_t checksum(uint16_t *addr, unsigned len)
 */
 QueryData genPing(QueryContext& context) {
   QueryData results;
+  char latencyStr[64];
+  int lastIdx;
 
   auto requests = context.constraints["host"].getAll(EQUALS);
 
@@ -226,7 +225,16 @@ QueryData genPing(QueryContext& context) {
         break;
     }
 
-    r["latency"] = INTEGER(latency/1000);
+    sprintf(latencyStr,"%ld.%d", latency/1000, (int)(latency%1000));
+    lastIdx = strlen(latencyStr) - 1;
+    while (latencyStr[lastIdx] == '0') {
+      latencyStr[lastIdx] = '\0';
+      lastIdx--;
+    }
+    if (latencyStr[lastIdx] == '.')
+      latencyStr[lastIdx] = '\0';
+
+    r["latency"] = latencyStr;
     results.push_back(r);
     sleep(1);
   }
