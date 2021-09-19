@@ -50,6 +50,7 @@ function(generateNativeTables)
     listening_ports.table
     logged_in_users.table
     os_version.table
+    ping.table
     platform_info.table
     process_memory_map.table
     process_open_sockets.table
