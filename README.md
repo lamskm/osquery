@@ -1,7 +1,8 @@
 ##osquery new table ping
 ======================
 
-https://github.com/lamskm/osquery
+REPO LOCATION: https://github.com/lamskm/osquery
+
 ##1. Instructions to use osquery ping table:
 
 In the forked repo of osquery above, an extension table named ping has been added to osquery.
