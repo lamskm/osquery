@@ -3,7 +3,7 @@
 
 REPO LOCATION: https://github.com/lamskm/osquery
 
-##1. Instructions to use osquery ping table:
+1. Instructions to use osquery ping table:
 
 In the forked repo of osquery above, an extension table named ping has been added to osquery.
 
@@ -29,7 +29,7 @@ and three files have been added:
 
 These 3 changes and 3 files can be downloaded and integrated into an existing osquery repo to build and use.
 
-##2. The design choices mostly follow what existed and worked well.
+2. The design choices mostly follow what existed and worked well.
 
 The code style and amount of logic follows that of the existing curl table.
 (/osquery/tables/networking/ping.cpp)
