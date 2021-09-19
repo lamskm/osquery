@@ -32,7 +32,7 @@ TEST_F(ping, test_sanity) {
   // Or use custom DataCheck object
    ValidationMap row_map = {
         {"host", NormalType},
-        {"latency", IntMinMaxCheck(0,999999)},
+        {"latency", NormalType},
    };
   // 4. Perform validation
    validate_rows(data, row_map);
