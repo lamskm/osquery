@@ -22,6 +22,7 @@ function(generateOsqueryTablesNetworking)
     etc_protocols.cpp
     etc_services.cpp
     listening_ports.cpp
+    ping.cpp
   )
 
   if(DEFINED PLATFORM_POSIX)
