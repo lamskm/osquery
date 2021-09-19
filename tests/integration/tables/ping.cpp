@@ -24,14 +24,14 @@ class ping : public testing::Test {
 
 TEST_F(ping, test_sanity) {
   // 1. Query data
-  auto const data = execute_query("select * from ping where url = ''");
+  auto const data = execute_query("select * from ping where host = ''");
   // 2. Check size before validation
   ASSERT_GE(data.size(), 0ul);
   // 3. Build validation map
   // See helper.h for available flags
   // Or use custom DataCheck object
    ValidationMap row_map = {
-        {"url", NormalType},
+        {"host", NormalType},
         {"latency", IntMinMaxCheck(0,999999)},
    };
   // 4. Perform validation
