@@ -3,7 +3,7 @@
 
 REPO LOCATION: https://github.com/lamskm/osquery
 
-1. Instructions to use osquery ping table:
+[1]. Instructions to use osquery ping table:
 
 In the forked repo of osquery above, an extension table named ping has been added to osquery.
 
@@ -25,7 +25,7 @@ And the same invocation of osqueryi will allow the use of the ping table, such a
 osquery> select * from ping where url = "yahoo.com";  
 osquery> select * from ping where url = "yahoo.com" or url = "8.8.8.8";  
 
-2. The design choices mostly follow what existed and worked well.  
+[2]. The design choices mostly follow what existed and worked well.  
 
 The code style and amount of logic follow that of the existing osquery curl table.
 (/osquery/tables/networking/curl.cpp)
