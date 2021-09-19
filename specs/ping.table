@@ -1,7 +1,7 @@
 table_name("ping")
 description("returns ping latency time.")
 schema([
-    Column("url", TEXT, "The url for the request", required=True, index=True),
+    Column("host", TEXT, "The url for the request", required=True, index=True),
     Column("latency", BIGINT, "The latency of PING round-trip"),
 ])  
 implementation("networking/ping@genPing")
