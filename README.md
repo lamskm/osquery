@@ -9,23 +9,23 @@ In the forked repo of osquery above, an extension table named ping has been adde
 
 Three CMakeLists.txt files have been modified (added a line for the ping table code):
 
-https://github.com/lamskm/osquery/blob/master/specs/CMakeLists.txt
-https://github.com/lamskm/osquery/blob/master/osquery/tables/networking/CMakeLists.txt
-https://github.com/lamskm/osquery/blob/master/tests/integration/tables/CMakeLists.txt
+https://github.com/lamskm/osquery/blob/master/specs/CMakeLists.txt   
+https://github.com/lamskm/osquery/blob/master/osquery/tables/networking/CMakeLists.txt   
+https://github.com/lamskm/osquery/blob/master/tests/integration/tables/CMakeLists.txt   
 
 and three files have been added:
 
-https://github.com/lamskm/osquery/blob/master/specs/ping.table
-https://github.com/lamskm/osquery/blob/master/osquery/tables/networking/ping.cpp
-https://github.com/lamskm/osquery/blob/master/tests/integration/tables/ping.cpp
+https://github.com/lamskm/osquery/blob/master/specs/ping.table   
+https://github.com/lamskm/osquery/blob/master/osquery/tables/networking/ping.cpp   
+https://github.com/lamskm/osquery/blob/master/tests/integration/tables/ping.cpp  
 
 These 3 changes and 3 files can be downloaded and integrated into an existing osquery repo to build.
 And the same invocation of osqueryi will allow the use of the ping table, such as:
 
-osquery> select * from ping where url = "yahoo.com";
-osquery> select * from ping where url = "yahoo.com" or url = "8.8.8.8";
+osquery> select * from ping where url = "yahoo.com";  
+osquery> select * from ping where url = "yahoo.com" or url = "8.8.8.8";  
 
-2. The design choices mostly follow what existed and worked well.
+2. The design choices mostly follow what existed and worked well.  
 
 The code style and amount of logic follow that of the existing osquery curl table.
 (/osquery/tables/networking/curl.cpp)
