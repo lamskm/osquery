@@ -22,8 +22,8 @@ https://github.com/lamskm/osquery/blob/master/tests/integration/tables/ping.cpp
 These 3 changes and 3 files can be downloaded and integrated into an existing osquery repo to build.
 And the same invocation of osqueryi will allow the use of the ping table, such as:
 
-osquery> select * from ping where url = "yahoo.com";  
-osquery> select * from ping where url = "yahoo.com" or url = "8.8.8.8";  
+osquery> select * from ping where host = "yahoo.com";  
+osquery> select * from ping where host = "yahoo.com" or host = "8.8.8.8";  
 
 [2]. The design choices mostly follow what existed and worked well.  
 
